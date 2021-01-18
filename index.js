@@ -2,6 +2,7 @@ const express = require('express')
 const { ApolloServer } = require('apollo-server-express')
 const http = require('http')
 const mongoose = require('mongoose')
+const path = require("path")
 
 require('dotenv').config()
 
@@ -27,10 +28,10 @@ mongoose
   })
 
 const app = express()
-app.use(express.static('build'))
+app.use(express.static('client/build'))
 
 app.get('*',(req, res) => {
-  res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
 })
 
 const server = new ApolloServer({
