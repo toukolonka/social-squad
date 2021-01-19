@@ -7,6 +7,7 @@ import { AuthContext } from '../context/auth'
 import LikeButton from './LikeButton'
 import DeleteButton from './DeleteButton'
 import MyPopup from '../util/MyPopup'
+import theme from '../theme'
 
 function PostCard({ post }) {
   const { user } = useContext(AuthContext)
@@ -42,15 +43,17 @@ function PostCard({ post }) {
         <LikeButton user={user} post={{ id, likes, likeCount }} />
         <MyPopup content="Comment on post">
           <Button labelPosition="right" as={Link} to={`/posts/${id}`}>
-            <Button color="blue" basic>
-              <Icon name="comments" />
+            <Button color={theme.colors.primary} basic size="small">
+              <Icon name="comments" size="large" />
             </Button>
             <Label basic color="blue" pointing="left">
               {commentCount}
             </Label>
           </Button>
         </MyPopup>
-        {user && user.username === username && !match && <DeleteButton postId={id} callback={deletePostCallback} />}
+        {user && user.username === username && !match && (
+          <DeleteButton postId={id} callback={deletePostCallback} />
+        )}
       </Card.Content>
     </Card>
   )
