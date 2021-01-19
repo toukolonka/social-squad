@@ -1,5 +1,7 @@
 # Social Squad
 
+A simple social media app built by using MERGN (MongoDB, Express, React, GraphQL and Node)
+
 ## Getting Started
 
 `git clone https://github.com/toukolonka/social-squad.git`
