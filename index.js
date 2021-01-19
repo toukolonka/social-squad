@@ -30,6 +30,10 @@ mongoose
 const app = express()
 app.use(express.static('build'))
 
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
+
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
