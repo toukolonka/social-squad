@@ -1,16 +1,24 @@
+body {
+  overflow-y: scroll;
+}
+
 .page-title {
-    display: block !important;
-    text-align: center;
-    font-size: 2rem;
-    margin-top: 10px;
-  }
-  
-  .form-container {
-    max-width: 350px;
-    margin: auto;
-  }
-  
-  .ui.teal.button:focus,
-  .ui.teal.buttons .button:focus {
-    background-color: #00b5ad;
-  }
+  display: block !important;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+.form-container {
+  max-width: 350px;
+  margin: auto;
+}
+
+.full-container {
+  overflow: visible;
+}
+
+.ui.teal.button:focus,
+.ui.teal.buttons .button:focus {
+  background-color: #00b5ad;
+}
