@@ -46,7 +46,6 @@ const PostList = () => {
 
   useSubscription(POST_ADDED, {
     onSubscriptionData: ({ subscriptionData }) => {
-      console.log(subscriptionData)
       const addedPost = subscriptionData.data.newPost
       updateCacheWith(addedPost)
     },
@@ -71,7 +70,6 @@ const PostList = () => {
 
   useSubscription(POST_DELETED, {
     onSubscriptionData: ({ subscriptionData }) => {
-      console.log(subscriptionData)
       const delPost = subscriptionData.data.deletedPost
       updateCacheWithDel(delPost)
     },

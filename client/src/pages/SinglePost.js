@@ -66,7 +66,6 @@ function SinglePost(props) {
   useSubscription(COMMENT_ADDED, {
     onSubscriptionData: ({ subscriptionData }) => {
       const addedComment = subscriptionData.data.newComment
-      console.log(addedComment)
       updateCacheWith(addedComment)
     },
   })
@@ -89,7 +88,6 @@ function SinglePost(props) {
   useSubscription(COMMENT_DELETED, {
     onSubscriptionData: ({ subscriptionData }) => {
       const delComment = subscriptionData.data.deletedComment
-      console.log(delComment)
       updateCacheWithDelCom(delComment)
     },
   })
@@ -113,7 +111,6 @@ function SinglePost(props) {
   useSubscription(LIKE_ADDED, {
     onSubscriptionData: ({ subscriptionData }) => {
       const addedLike = subscriptionData.data.newLike
-      console.log(addedLike)
       updateCacheWithLike(addedLike)
     },
   })
@@ -138,7 +135,6 @@ function SinglePost(props) {
   useSubscription(LIKE_DELETED, {
     onSubscriptionData: ({ subscriptionData }) => {
       const delLike = subscriptionData.data.deletedLike
-      console.log(delLike)
       updateCacheWithDelLike(delLike)
     },
   })

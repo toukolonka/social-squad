@@ -13,9 +13,6 @@ import { setContext } from 'apollo-link-context'
 import { getMainDefinition } from '@apollo/client/utilities'
 import { WebSocketLink } from '@apollo/client/link/ws'
 
-//const httpURL = window.location.origin.concat("/graphql")
-//console.log(httpURL)
-
 const httpLink = new HttpLink({ uri: "/graphql" })
 
 const authLink = setContext((_, { headers }) => {
@@ -29,7 +26,6 @@ const authLink = setContext((_, { headers }) => {
 })
 
 const wsURL = window.location.origin.replace(/^http/, 'ws').concat("/graphql")
-//console.log(wsURL)
 
 const wsLink = new WebSocketLink({
   uri: wsURL,
