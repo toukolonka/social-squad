@@ -1,5 +1,7 @@
 # Social Squad
 
+A simple social media app built by using MERGN (MongoDB, Express, React, GraphQL and Node)
+
 ## Getting Started
 
 `git clone https://github.com/toukolonka/social-squad.git`
@@ -10,7 +12,7 @@
 
 `npm start` - runs the application on localhost:4000
 
-You need to also add a ".env" file to the root of a project containing a variable named MONGODB_URI. This variable contains the database URL.
+You need to also set an environment variable called MONGODB_URI which contains the database URL.
 
 ### OR
 
