@@ -1,6 +1,6 @@
 const theme = {
     colors: {
-      primary: 'teal',
+      primary: 'blue',
       secondary: 'purple',
     },
 }

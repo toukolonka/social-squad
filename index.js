@@ -2,7 +2,7 @@ const express = require('express')
 const { ApolloServer } = require('apollo-server-express')
 const http = require('http')
 const mongoose = require('mongoose')
-const path = require("path")
+const path = require('path')
 
 require('dotenv').config()
 
@@ -28,16 +28,18 @@ mongoose
   })
 
 const app = express()
-app.use(express.static('build'))
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('build'))
+}
 
 app.get('*', function (req, res) {
-	res.sendFile(path.join(__dirname, "build", "index.html"));
-});
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: ({ req }) => ({ req })
+  context: ({ req }) => ({ req }),
 })
 
 server.applyMiddleware({ app })
